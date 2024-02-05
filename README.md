@@ -8,25 +8,22 @@
 
 🏡 [https://pasciak.com](https://pasciak.com)
 
-
-<!--
-**pasciaks/pasciaks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**pasciaks/pasciaks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on MY GitHub profile.
 
 Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🔭 I’m currently working on ... Full Stack JAVA Bootcamp with Skill Distillery
+- 🌱 I’m currently learning ... JAVA, Angular
+- 👯 I’m looking to collaborate on ... Interesting projects and Full Time Remote Development Employment
+- 🤔 I’m looking for help with ... Finding a good work-life balance position
+- 💬 Ask me about ... The words!
+- 📫 How to reach me: ... email me at my domain
+- 😄 Pronouns: ... He/Him
+- ⚡ Fun fact: ... Stop playing with yourself - A philosophy of life in a word game - http://lostwords.org
 
 ## Tools 🛠️
 
-* #### Learning / Using: &nbsp; <span style="font-size: 0.60em;">(...skilled by 3 June '24)
+- #### Learning / Using: &nbsp; <span style="font-size: 0.60em;">(...skilled by 3 June '24)
 </span>
 
 <table>
@@ -36,8 +33,6 @@ Here are some ideas to get you started:
     <td><img src="media/javascript-color.svg" alt="Javascript" width="50"></td>
     <td><img src="media/java-svgrepo-com.svg" alt="Java" width="50"></td>    
     <td><img src="media/mysql.png" alt="MySQL" width="75"></td>    
-  </tr>
-  <tr>
     <td><img src="media/spring-color.svg" alt="Figma" width="50"></td>
     <td><img src="media/springboot-color.svg" alt="SpringBoot" width="50"></td>
   </tr>
