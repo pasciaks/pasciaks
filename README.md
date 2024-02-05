@@ -1,6 +1,6 @@
 💰 Full Stack Software Developer
 
-📫 [Email me at sheldon@pasciak.com](mailto:sheldon@pasciak.com)
+📫 Email me at sheldon@pasciak.com
 
 👔 [LinkedIn](https://www.linkedin.com/in/sheldonpasciak)
 
@@ -21,10 +21,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ... He/Him
 - ⚡ Fun fact: ... Stop playing with yourself - A philosophy of life in a word game - http://lostwords.org
 
-## Tools 🛠️
+## Tools 🛠️ and Languages 💬
 
-- #### Learning / Using: &nbsp; <span style="font-size: 0.60em;">(...skilled by 3 June '24)
-</span>
+- #### Currently Learning / Using: &nbsp;
+  <span style="font-size: 0.60em;">(...skilled by 3 June '24)</span>
 
 <table>
   <tr>
@@ -37,3 +37,38 @@ Here are some ideas to get you started:
     <td><img src="media/springboot-color.svg" alt="SpringBoot" width="50"></td>
   </tr>
 </table>
+
+<hr>
+
+- #### Skilled In...
+
+<table>
+  <tr>
+    <td>NodeJS</td>
+    <td>C#</td>
+    <td>React</td>
+    <td>Bootstrap</td>
+    <td>JavaScript</td>
+    <td>JQuery</td>
+    <td>Linux</td>
+
+  </tr>
+</table>
+
+<hr>
+
+- #### Experience With...
+<table>
+  <tr>
+    <td>AWS</td>
+    <td>Python</td>
+    <td>...many older languages</td>
+    <td>...many older technologies</td>
+  </tr>
+</table>
+
+<hr>
+
+♔♕♖♗♘♙♚♛♜♝♞♟
+
+💩
