@@ -51,7 +51,8 @@ Here are some ideas to get you started:
     <td>JavaScript</td>
     <td>JQuery</td>
     <td>Linux</td>
-
+    <td>SQL - MySQl/SQL/PostGres</td>
+    <td>NOSQL - Mongo/Mongoose</td>
   </tr>
 </table>
 
