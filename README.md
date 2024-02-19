@@ -46,13 +46,23 @@ Here are some ideas to get you started:
   <tr>
     <td>NodeJS</td>
     <td>C#</td>
+  </tr>
     <td>React</td>
     <td>Bootstrap</td>
+  <tr>
     <td>JavaScript</td>
     <td>JQuery</td>
+  </td>
+  <tr>
     <td>Linux</td>
+    <td>Bash/Zsh</td>
+    <td>Windows Batch</td>
+    <td>Powershell</td>
+  </tr>
+  <tr>
     <td>SQL - MySQl/SQL/PostGres</td>
     <td>NOSQL - Mongo/Mongoose</td>
+    <td>JSON</td>
   </tr>
 </table>
 
