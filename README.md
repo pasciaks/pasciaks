@@ -42,21 +42,31 @@ Here are some ideas to get you started:
 
 - #### Skilled In...
 
-<table>
+- <table>
   <tr>
     <td>Backend</td>
     <td>Frontend</td>
     <td>UI/UX</td>
     <td>Scripting/Database</td>
+  </tr>
+</table>
+
+<table>
   <tr>
     <td>NodeJS</td>
     <td>C#</td>
+    <td></td>
+    <td></td>
   </tr>
     <td>React</td>
     <td>Bootstrap</td>
+    <td></td>
+    <td></td>
   <tr>
     <td>JavaScript</td>
     <td>JQuery</td>
+    <td></td>
+    <td></td>
   </td>
   <tr>
     <td>Linux</td>
@@ -68,6 +78,7 @@ Here are some ideas to get you started:
     <td>SQL - MySQl/SQL/PostGres</td>
     <td>NOSQL - Mongo/Mongoose</td>
     <td>JSON</td>
+    <td></td>
   </tr>
 </table>
 
