@@ -44,6 +44,11 @@ Here are some ideas to get you started:
 
 <table>
   <tr>
+    <td>Backend</td>
+    <td>Frontend</td>
+    <td>UI/UX</td>
+    <td>Scripting/Database</td>
+  <tr>
     <td>NodeJS</td>
     <td>C#</td>
   </tr>
@@ -55,7 +60,7 @@ Here are some ideas to get you started:
   </td>
   <tr>
     <td>Linux</td>
-    <td>Bash/Zsh</td>
+    <td>sh/bash/zsh</td>
     <td>Windows Batch</td>
     <td>Powershell</td>
   </tr>
