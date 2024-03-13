@@ -7,5 +7,3 @@
 🔗 [Portfolio](https://pasciaks.github.io/)
 
 🏡 [https://pasciak.com](https://pasciak.com)
-
-<hr>
