@@ -8,7 +8,7 @@
 
 🏡 [https://pasciak.com](https://pasciak.com)
 
-Code	Appearing
+
 $${\color{red}Red}$$	$${\color{red}Red}$$
 $${\color{green}Green}$$	$${\color{green}Green}$$
 $${\color{lightgreen}Light \space Green}$$	$${\color{lightgreen}Light \space Green}$$
