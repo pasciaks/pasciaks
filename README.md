@@ -1,12 +1,20 @@
-💰 Full Stack Software Developer
+**Sheldon** is an experienced Full Stack developer looking for 💰 opportunities.
 
-📫 Email me at sheldon@pasciak.com
+- 📫 Email me at sheldon@pasciak.com
+- 👔 [LinkedIn](https://www.linkedin.com/in/sheldonpasciak)
+- 🔗 [Portfolio](https://pasciaks.github.io/)
+- 🏡 [https://pasciak.com](https://pasciak.com)
 
-👔 [LinkedIn](https://www.linkedin.com/in/sheldonpasciak)
+**pasciaks/pasciaks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on MY GitHub profile.
 
-🔗 [Portfolio](https://pasciaks.github.io/)
-
-🏡 [https://pasciak.com](https://pasciak.com)
+- 🔭 I’m currently working on ... Full Stack JAVA Bootcamp with Skill Distillery
+- 🌱 I’m currently learning ... JAVA, Angular
+- 👯 I’m looking to collaborate on ... Interesting projects and Full Time Remote Development Employment
+- 🤔 I’m looking for help with ... Finding a good work-life balance position
+- 💬 Ask me about ... The words!
+- 📫 How to reach me: ... email me at my domain
+- 😄 Pronouns: ... He/Him
+- ⚡ Fun fact: ... Stop playing with yourself - A philosophy of life in a word game - http://lostwords.org
 
 ## Tools 🛠️ and Languages 💬
 
@@ -23,6 +31,7 @@
 </table>
 
 - #### Skilled with Using: &nbsp;
+
 <table>
     <tr>
       <td><img src="media/html5-color.svg" alt="HTML5" width="50">HTML5</td>
@@ -33,10 +42,12 @@
 
 - #### Full Stack Development Experience
 
-- Frontend, Backend, UI/UX, Scripting/Database
-- HTML, CSS, JavaScript, JQuery
-- React, Bootstrap
-- NodeJS-Express, NextJS, C# 
-- Linux, MAC, Windows, SQL, NOSQL, JSON
-
-
+<table>
+    <tr>
+      - Frontend, Backend, UI/UX, Scripting/Database<br>
+      - HTML, CSS, JavaScript, JQuery<br>
+      - React, Bootstrap<br>
+      - NodeJS-Express, NextJS, C#<br>
+      - Linux, MAC, Windows, SQL, NOSQL, JSON<br>
+    </tr>
+</table>
