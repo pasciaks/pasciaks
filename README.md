@@ -19,7 +19,21 @@
 ## Tools 🛠️ and Languages 💬
 
 - #### Currently Learning / &nbsp;
-  <span style="font-size: 0.60em;">(...skilled by 3 June '24)</span>
+  <span style="font-size: 0.60em;">(...Completed Full Stack Java Web Developer Bootcamp at Skill Distillery, June 2024)</span>
+
+  <hr>
+
+HTML/CSS/Bootstrap API - Weather Forecasts and Map
+https://github.com/pasciaks/codeup-web-exercises/blob/de9aa01303e619be9cbbaa365ce9144ef60822fe/WEATHER_MAP.md#weather-map-project---sheldon-pasciak-codeup---december-2023
+
+Java JPA CRUD - Lostwords Org Library
+https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b40a1110d0?tab=readme-ov-file#jpacrudproject
+
+Java Full Stack - MySQL, JPA, Spring Boot, HTML, CSS, Bootstrap, Angular - Event Tracker - US Cities
+https://github.com/pasciaks/EventTrackerProject?tab=readme-ov-file#eventtrackerproject---sheldon-pasciak-skill-distillery
+
+Java Full Stack - MySQL, JPA, Spring Boot, Angular - Lesson Locker
+https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b40a1110d0?tab=readme-ov-file#jpacrudproject
 
 <table>
     <tr>
