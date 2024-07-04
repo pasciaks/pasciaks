@@ -61,7 +61,7 @@ Java Full Stack - MySQL, JPA, Spring Boot, Angular - Lesson Locker
     <tr>
       - Frontend, Backend, UI/UX, Scripting/Database<br>
       - HTML, CSS, JavaScript, JQuery<br>
-      - React, Bootstrap<br>
+      - React, Angular, EJS, Bootstrap<br>
       - NodeJS-Express, NextJS, C#<br>
       - Linux, MAC, Windows, SQL, NOSQL, JSON<br>
     </tr>
