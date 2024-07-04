@@ -1,39 +1,40 @@
 **Sheldon** is an experienced Full Stack developer looking for 💰 opportunities.
 
-- 📫 Email me at sheldon@pasciak.com
+- 📫 sheldon@pasciak.com
 - 👔 [LinkedIn](https://www.linkedin.com/in/sheldonpasciak)
-- 🔗 [Portfolio](https://pasciaks.github.io/)
+- 🔗 [GitHub](https://github.com/pasciaks)
 - 🏡 [https://pasciak.com](https://pasciak.com)
 
-**pasciaks/pasciaks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on MY GitHub profile.
+✨ My Software Development LifeCycle / Plans ... ✨
 
-- 🔭 I’m currently working on ... Full Stack JAVA Bootcamp with Skill Distillery
-- 🌱 I’m currently learning ... JAVA, Angular
-- 👯 I’m looking to collaborate on ... Interesting projects and Full Time Remote Development Employment
-- 🤔 I’m looking for help with ... Finding a good work-life balance position
-- 💬 Ask me about ... The words!
-- 📫 How to reach me: ... email me at my domain
-- 😄 Pronouns: ... He/Him
-- ⚡ Fun fact: ... Stop playing with yourself - A philosophy of life in a word game - http://lostwords.org
+- 🌱 I’ve recently completed
+  - Full Stack JAVA Bootcamp with Skill Distillery
+  - Meta Front End Developer Course
+- 🌱 I’m continually learning ... JAVA, Angular, React and NodeJS
+
+✨ Ask me about 🤔 ... 💬 The words! ✨
+
+- ⚡ Stop playing with yourself - A philosophy of life in a word game - http://lostwords.org
 
 ## Tools 🛠️ and Languages 💬
 
-- #### Currently Learning / &nbsp;
-  <span style="font-size: 0.60em;">(...Completed Full Stack Java Web Developer Bootcamp at Skill Distillery, June 2024)</span>
-
-  <hr>
-
 HTML/CSS/Bootstrap API - Weather Forecasts and Map
-https://github.com/pasciaks/codeup-web-exercises/blob/de9aa01303e619be9cbbaa365ce9144ef60822fe/WEATHER_MAP.md#weather-map-project---sheldon-pasciak-codeup---december-2023
 
-Java JPA CRUD - Lostwords Org Library
-https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b40a1110d0?tab=readme-ov-file#jpacrudproject
+- https://github.com/pasciaks/codeup-web-exercises/blob/de9aa01303e619be9cbbaa365ce9144ef60822fe/WEATHER_MAP.md#user-interface-frontend
+
+Java JPA CRUD, HTML/CSS/Bootstrap JavaScript - Lostwords Org Library
+
+- https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b40a1110d0?tab=readme-ov-file#jpacrudproject
 
 Java Full Stack - MySQL, JPA, Spring Boot, HTML, CSS, Bootstrap, Angular - Event Tracker - US Cities
-https://github.com/pasciaks/EventTrackerProject?tab=readme-ov-file#eventtrackerproject---sheldon-pasciak-skill-distillery
+
+- https://github.com/pasciaks/EventTrackerProject?tab=readme-ov-file#eventtrackerproject---sheldon-pasciak-skill-distillery
 
 Java Full Stack - MySQL, JPA, Spring Boot, Angular - Lesson Locker
-https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b40a1110d0?tab=readme-ov-file#jpacrudproject
+
+- https://github.com/pasciaks/LessonLocker/tree/main?tab=readme-ov-file#finalproject
+
+  <hr>
 
 <table>
     <tr>
@@ -54,7 +55,7 @@ https://github.com/pasciaks/JPACRUDProject/tree/c4873387759dad96695e64f63927d7b4
     </tr>
 </table>
 
-- #### Full Stack Development Experience
+<hr>
 
 <table>
     <tr>
