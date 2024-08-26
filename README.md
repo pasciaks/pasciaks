@@ -34,28 +34,33 @@ Java Full Stack - MySQL, JPA, Spring Boot, Angular - Lesson Locker
 
 - https://github.com/pasciaks/LessonLocker/tree/main?tab=readme-ov-file#finalproject
 
-  <hr>
+<hr><br>
+
+#### Skilled with: &nbsp;
 
 <table>
     <tr>
-    <td><img src="media/java-svgrepo-com.svg" alt="Java" width="50">JAVA</td>
-    <td><img src="media/mysql.png" alt="MySQL" width="75">MySQL</td> 
-    <td><img src="media/spring-color.svg" alt="Figma" width="50">Spring</td>
-    <td><img src="media/springboot-color.svg" alt="SpringBoot" width="50">Spring Boot</td>
+      <td><img src="media/java-svgrepo-com.svg" alt="Java" width="50"> JAVA</td>
+      <td><img src="media/spring-color.svg" alt="Figma" width="50"> Spring</td>
+      <td><img src="media/springboot-color.svg" alt="SpringBoot" width="50"> Spring Boot</td>
     </tr>
-</table>
-
-- #### Skilled with Using: &nbsp;
-
-<table>
+    <tr>
+      <td><img src="media/node_icon.png" alt="NodeJS" width="50">NodeJS</td>
+      <td><img src="media/react_icon.png" alt="TypeScript" width="50">React JS</td>
+      <td><img src="media/angular_icon.png" alt="TypeScript" width="50">Angular</td>
+      </tr>
+    <tr>
+      <td><img src="media/mysql.png" alt="MySQL" width="75"> MySQL</td> 
+      <td><img src="media/postgresql.png" alt="PostgreSQL" width="75"> PostgreSQL</td> 
+      <td><img src="media/mongoose_logo.png" alt="Mongoose" width="75"> Mongoose</td> 
+    </tr>
     <tr>
       <td><img src="media/html5-color.svg" alt="HTML5" width="50">HTML5</td>
       <td><img src="media/css3-color.svg" alt="CSS3" width="50">CSS3</td>
       <td><img src="media/javascript-color.svg" alt="Javascript" width="50">JavaScript</td>
+      <td><img src="media/ts_icon.png" alt="TypeScript" width="50">TypeScript</td>
     </tr>
 </table>
-
-<hr>
 
 <table>
     <tr>
