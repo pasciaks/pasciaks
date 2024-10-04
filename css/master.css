@@ -1612,6 +1612,10 @@ footer {
   .section-indicators-block {
     display: none;
   }
+
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) and (min-height: 551px) {
