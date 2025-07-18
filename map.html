@@ -3,6 +3,8 @@
 
 <head>
   <title>ULTIMATE HOT SPRINGS GUIDE - Map</title>
+  <link rel="icon" type="image/jpeg" href="logo-only.jpeg">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,6 +17,19 @@
     body {
       margin: 0;
       font-family: sans-serif;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.8em;
+      margin: 20px 0;
+    }
+
+    h3 a {
+      color: #2a8a8a;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      transition: color 0.3s ease;
     }
 
     #map {
@@ -109,8 +124,15 @@
         <input type="text" id="labelFilter" placeholder="e.g. Idaho, spa, river"
           style="width: 100%; padding: 10px; box-sizing: border-box;" />
       </label>
-      <button type="submit" style="width: 100%; padding: 10px; box-sizing: border-box;">Search</button>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="submit" style="flex: 1; padding: 10px; box-sizing: border-box;">Search</button>
+        <button type="button" onclick="location.reload()" style="flex: 1; padding: 10px; box-sizing: border-box;">
+          Random Location
+        </button>
+      </div>
     </form>
+
   </div>
 
   <div id="map"></div>
@@ -4366,9 +4388,9 @@
           <div><strong>Address:</strong> ${address || 'N/A'}</div>
           ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
           <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
-          <div style="margin-top: 10px;">
-            <a href="${url}" target="_blank" rel="noopener noreferrer">Visit Info Page</a>
-          </div>
+          <h3 style="margin-top: 10px;">
+            <a href="${url}" target="_blank" rel="noopener noreferrer">View Details at The Ultimate Hot Springs Guide Page</a>
+          </h3>
         `;
         dialog.showModal();
 
