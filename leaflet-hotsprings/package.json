@@ -1,0 +1,17 @@
+{
+  "name": "leaflet-hotsprings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "leaflet-node-fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hotspringsmap.html && http-server -p 8000",
+    "build": "sh ./crawl-and-extract.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

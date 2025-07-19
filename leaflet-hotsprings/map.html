@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ULTIMATE HOT SPRINGS GUIDE - Map</title>
+  <link rel="icon" type="image/jpeg" href="logo-only.jpeg">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.8em;
+      margin: 20px 0;
+    }
+
+    h3 a {
+      color: #2a8a8a;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      transition: color 0.3s ease;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+
+    #controls {
+      position: absolute;
+      z-index: 1000;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 0.5em 1em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      max-width: 100%;
+      margin: 10px 50px;
+      font-size: 0.9rem;
+    }
+
+    #controls label {
+      flex: 1 1 150px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    #controls input {
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #controls button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      background-color: #2a8bf2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #controls button:hover {
+      background-color: #1a6ed8;
+    }
+
+    dialog#marker-dialog {
+      border: none;
+      border-radius: 6px;
+      max-width: 95vw;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    #marker-dialog h2 {
+      margin-top: 0;
+      font-size: 1.1em;
+    }
+
+    #marker-dialog .close-btn {
+      background: #ccc;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      float: right;
+      cursor: pointer;
+    }
+
+    #marker-dialog .content {
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="controls">
+    <form onsubmit="submitForm(event)" style="max-width: 400px; margin: 0 auto;">
+      <label style="display: block; width: 100%; margin-bottom: 10px;">
+        Name Search
+        <input type="text" id="labelFilter" placeholder="e.g. Idaho, spa, river"
+          style="width: 100%; padding: 10px; box-sizing: border-box;" />
+      </label>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="submit" style="flex: 1; padding: 10px; box-sizing: border-box;">Search</button>
+        <button type="button" onclick="location.reload()" style="flex: 1; padding: 10px; box-sizing: border-box;">
+          Random Location
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+  <div id="map"></div>
+
+  <dialog id="marker-dialog">
+    <button class="close-btn" onclick="document.getElementById('marker-dialog').close()">Close</button>
+    <h2 id="dialog-label"></h2>
+    <div class="content" id="dialog-content"></div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="data.js"></script>
+
+  <script>
+
+    function submitForm(event) {
+      event.preventDefault();
+      applyFilters();
+    }
+
+    const markers = window.hotSpringMarkers || [];
+
+    const map = L.map('map');
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const markerClusterGroup = L.markerClusterGroup();
+    map.addLayer(markerClusterGroup);
+
+    const randomIndex = Math.floor(Math.random() * markers.length);
+    const initialMarker = markers[randomIndex];
+
+    // First, set initial view so map is initialized properly
+    map.setView([initialMarker.lat, initialMarker.lng], 3); // low zoom for init
+
+    // Then, fly to the desired location with animation
+    setTimeout(() => {
+      map.flyTo([initialMarker.lat, initialMarker.lng], 7, {
+        animate: true,
+        duration: 1.5
+      });
+    }, 100); // slight delay to ensure map is fully ready
+
+
+
+    function truncateText(text, maxLen = 200) {
+      if (!text) return '';
+      if (text.length <= maxLen) return text;
+      const truncated = text.slice(0, maxLen);
+      const lastSpace = truncated.lastIndexOf(' ');
+      return lastSpace > 50 ? truncated.slice(0, lastSpace) + '…' : truncated + '…';
+    }
+
+    function createMarker(entry) {
+      const { lat, lng, label, url, address, website, rating, accessibility } = entry;
+      const marker = L.marker([lat, lng]);
+
+      marker.on('click', () => {
+        // Recenter
+        setTimeout(() => {
+          map.setView([lat, lng], map.getZoom(), { animate: true });
+          setTimeout(() => map.panBy([0, -100]), 300); // Optional vertical offset
+        }, 200);
+
+        const cleanWebsite = website && !/no web.?site/i.test(website) ? website.trim() : null;
+        let linkText = "Visit Website";
+        const websiteHtml = cleanWebsite && /^(https?:\/\/|www\.)/.test(cleanWebsite)
+          ? `<a href="${cleanWebsite.startsWith('http') ? cleanWebsite : 'https://' + cleanWebsite}" target="_blank" rel="noopener noreferrer">${linkText}</a>`
+          : "N/A";
+
+        const isMobile = window.innerWidth <= 768;
+
+        const dialog = document.getElementById('marker-dialog');
+        if (dialog.open) dialog.close();
+        document.getElementById('dialog-label').textContent = label;
+        document.getElementById('dialog-content').innerHTML = `
+          <div><strong>Address:</strong> ${address || 'N/A'}</div>
+          ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
+          <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
+          <h3 style="margin-top: 10px;">
+            <a href="${url}" target="_blank" rel="noopener noreferrer">View Details at The Ultimate Hot Springs Guide Page</a>
+          </h3>
+        `;
+        dialog.showModal();
+
+        // if (isMobile) {
+        //   const dialog = document.getElementById('marker-dialog');
+        //   if (dialog.open) dialog.close();
+        //   document.getElementById('dialog-label').textContent = label;
+        //   document.getElementById('dialog-content').innerHTML = `
+        //   <div><strong>Address:</strong> ${address || 'N/A'}</div>
+        //   ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
+        //   <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
+        //   <div style="margin-top: 10px;">
+        //     <a href="${url}" target="_blank" rel="noopener noreferrer">Visit Info Page</a>
+        //   </div>
+        // `;
+        //   dialog.showModal();
+        // } else {
+        //   const popupContent = `
+        //   <div style="max-width: 300px;">
+        //     <div style="text-align:center;font-weight:bold; font-size:1.05em; margin-bottom:6px;">
+        //       <a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>
+        //     </div>
+        //     <div><strong>Address:</strong> ${address || 'N/A'}</div>
+        //     ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
+        //     <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
+        //   </div>
+        // `;
+        //   marker.bindPopup(popupContent).openPopup();
+        // }
+      });
+
+      return { marker, entry };
+    }
+
+    let markerObjects = markers.map(createMarker);
+
+    function renderMarkers(autoZoom = false) {
+      markerClusterGroup.clearLayers();
+      const query = document.getElementById('labelFilter')?.value?.trim().toLowerCase() || '';
+
+      const visibleMarkers = markerObjects
+        .filter(({ entry }) => !query || entry.label.toLowerCase().includes(query));
+
+      visibleMarkers.forEach(({ marker }) => markerClusterGroup.addLayer(marker));
+
+      if (autoZoom) {
+        // Automatically zoom to fit all visible markers
+        if (visibleMarkers.length > 0) {
+          const bounds = L.latLngBounds(visibleMarkers.map(({ marker }) => marker.getLatLng()));
+          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 }); // Avoid zooming in too far
+        }
+      }
+    }
+
+
+    function applyFilters() {
+      renderMarkers(true);
+
+
+      const dialog = document.getElementById('marker-dialog');
+      if (dialog?.open) dialog.close();
+    }
+
+    // Setup map tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Render all markers after short delay
+    setTimeout(() => {
+      renderMarkers();
+
+      // Optionally auto-show the selected marker’s popup or dialog
+      const { marker } = markerObjects[randomIndex];
+      // marker.fire('click');
+    }, 300);
+  </script>
+
+</body>
+
+</html>

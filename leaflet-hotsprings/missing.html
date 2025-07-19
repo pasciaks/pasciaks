@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hot Springs in Missing States</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
+
+  <script>
+    const springs = [
+      { name: "Warm Mineral Springs", state: "Florida", lat: 27.059, lng: -82.259 },
+      { name: "Radium Springs", state: "Georgia", lat: 31.541, lng: -84.110 },
+      { name: "French Lick Springs", state: "Indiana", lat: 38.548, lng: -86.619 },
+      { name: "West Baden Springs", state: "Indiana", lat: 38.566, lng: -86.614 },
+      { name: "Okawville Mineral Springs", state: "Illinois", lat: 38.436, lng: -89.551 },
+      { name: "Colfax Springs", state: "Iowa", lat: 41.674, lng: -93.245 },
+      { name: "Chickasaw Mineral Springs", state: "Oklahoma", lat: 34.497, lng: -96.985 },
+      { name: "Yellow Springs", state: "Ohio", lat: 39.806, lng: -83.886 },
+      { name: "Berkeley Springs", state: "West Virginia", lat: 39.626, lng: -78.227 },
+      { name: "White Sulphur Springs", state: "West Virginia", lat: 37.793, lng: -80.301 },
+      { name: "Cambridge Springs", state: "Pennsylvania", lat: 41.803, lng: -80.057 },
+      { name: "Bedford Springs", state: "Pennsylvania", lat: 40.010, lng: -78.503 },
+      { name: "Clarendon Springs", state: "Vermont", lat: 43.529, lng: -72.985 },
+      { name: "Red Boiling Springs", state: "Tennessee", lat: 36.530, lng: -85.848 },
+      { name: "Excelsior Springs", state: "Missouri", lat: 39.340, lng: -94.226 },
+      { name: "Schooley’s Mountain Springs", state: "New Jersey", lat: 40.801, lng: -74.778 },
+      { name: "Waukesha Springs", state: "Wisconsin", lat: 43.011, lng: -88.231 },
+      { name: "Spring Lake Mineral Springs", state: "Connecticut", lat: 41.727, lng: -73.000 },
+      { name: "Leicester Springs", state: "Massachusetts", lat: 42.243, lng: -71.911 },
+      { name: "Mount Clemens Mineral Baths", state: "Michigan", lat: 42.598, lng: -82.882 },
+      { name: "Hot Springs (on NC border)", state: "Tennessee", lat: 35.892, lng: -82.827 },
+      { name: "Castalian Springs", state: "Mississippi", lat: 32.587, lng: -89.739 },
+      { name: "Waconda Springs (submerged)", state: "Kansas", lat: 39.506, lng: -98.425 },
+      { name: "White Earth Springs", state: "North Dakota", lat: 47.805, lng: -102.734 },
+      { name: "Delavan Mineral Springs", state: "Wisconsin", lat: 42.634, lng: -88.642 },
+      { name: "Mineral Spring Ave", state: "Rhode Island", lat: 41.872, lng: -71.402 },
+      { name: "Itasca Warm Springs", state: "Minnesota", lat: 47.248, lng: -95.207 },
+      { name: "Drennon Springs", state: "Kentucky", lat: 38.521, lng: -85.169 },
+      { name: "Glenn Springs", state: "South Carolina", lat: 34.839, lng: -81.868 },
+      { name: "Magnetic Springs", state: "Ohio", lat: 40.338, lng: -83.258 }
+    ];
+
+    const map = L.map('map').setView([39.5, -98.35], 5); // Center of USA
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    springs.forEach(({ name, state, lat, lng }) => {
+      L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup(`<strong>${name}</strong><br>${state}`);
+    });
+  </script>
+</body>
+</html>
