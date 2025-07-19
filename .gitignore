@@ -7,6 +7,12 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# Ignore a specific folder
+downloaded/
+
+# Ignore all folders starting with "archived_"
+archived_*/
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
