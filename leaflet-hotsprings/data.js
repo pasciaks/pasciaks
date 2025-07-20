@@ -375,7 +375,7 @@ window.hotSpringMarkers = [
     "lat": 34.0766075,
     "lng": -118.3076403,
     "address": "&nbsp; &nbsp; 308 N Oxford Ave, Los Angeles, CA 90004",
-    "website": "http://www.beverlyhotsprings.com",
+    "website": "",
     "rating": "&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&#11088;&#11088;&#11088; (3 out 5 stars) Good Hot Springs Rating&nbsp;",
     "accessibility": "&nbsp;Beverly Hot Springs&nbsp;&#8203;is very accessible.&nbsp; You can drive up to the resort.&nbsp; Once at the resort it an easy walk around the property.&nbsp; Beverly Hot Springs is handicap accessible.&nbsp;&nbsp;"
   },

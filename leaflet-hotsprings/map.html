@@ -82,12 +82,25 @@
       background-color: #1a6ed8;
     }
 
-    dialog#marker-dialog {
+    /* dialog#marker-dialog {
       border: none;
       border-radius: 6px;
       max-width: 95vw;
       padding: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    } */
+
+    dialog#marker-dialog {
+      border: none;
+      border-radius: 8px;
+      max-width: 90vw;
+      padding: 16px;
+      margin: auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      box-sizing: border-box;
+      inset: 10px;
+      text-align: start;
+      word-break: break-word;
     }
 
     dialog::backdrop {
@@ -150,13 +163,23 @@
   <script>
 
     function getForecast(lat, lon) {
-      const url = `https://forecast.weather.gov/MapClick.php?lat=${lat}&lon=${lon}`;
-      return url;//window.open(url, '_blank');
+      return `https://forecast.weather.gov/MapClick.php?lat=${lat}&lon=${lon}`;
     }
 
     function getWindyUrl(lat, lon) {
-      const url = `https://www.windy.com/${lat}/${lon}`;
-      return url;//window.open(url, '_blank');
+      return `https://www.windy.com/${lat}/${lon}`;
+    }
+
+    function getOpenStreet(lat, lng) {
+      return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
+    }
+
+    function getBing(lat, lng) {
+      return `https://www.bing.com/maps?cp=${lat}~${lng}&lvl=16`;
+    }
+
+    function getMapQuest(lat, lng) {
+      return `https://www.mapquest.com/latlng/${lat},${lng}`;
     }
 
     function submitForm(event) {
@@ -208,11 +231,14 @@
 
         let fUrl = getForecast(lat, lng);
         let wUrl = getWindyUrl(lat, lng);
+        let sUrl = getOpenStreet(lat, lng);
+        let bUrl = getBing(lat, lng);
+        let mUrl = getMapQuest(lat, lng);
 
         // Recenter
         setTimeout(() => {
           map.setView([lat, lng], map.getZoom(), { animate: true });
-          // setTimeout(() => map.panBy([0, -100]), 300); // Optional vertical offset
+          // setTimeout(() => map.panBy([0, -100]), 15); // Optional vertical offset
         }, 200);
 
         const cleanWebsite = website && !/no web.?site/i.test(website) ? website.trim() : null;
@@ -256,6 +282,15 @@
       font-size: 14px;
       display: inline-block;
     ">Windy.com</a>
+        <a href="${sUrl}" target="_blank" rel="noopener noreferrer" style="
+      background-color: #28a745;
+      color: white;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      display: inline-block;
+    ">Open Street Map</a>
   </div>
 `;
 
