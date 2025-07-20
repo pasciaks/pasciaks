@@ -149,6 +149,16 @@
 
   <script>
 
+    function getForecast(lat, lon) {
+      const url = `https://forecast.weather.gov/MapClick.php?lat=${lat}&lon=${lon}`;
+      return url;//window.open(url, '_blank');
+    }
+
+    function getWindyUrl(lat, lon) {
+      const url = `https://www.windy.com/${lat}/${lon}`;
+      return url;//window.open(url, '_blank');
+    }
+
     function submitForm(event) {
       event.preventDefault();
       applyFilters();
@@ -195,10 +205,14 @@
       const marker = L.marker([lat, lng]);
 
       marker.on('click', () => {
+
+        let fUrl = getForecast(lat, lng);
+        let wUrl = getWindyUrl(lat, lng);
+
         // Recenter
         setTimeout(() => {
           map.setView([lat, lng], map.getZoom(), { animate: true });
-          setTimeout(() => map.panBy([0, -100]), 300); // Optional vertical offset
+          // setTimeout(() => map.panBy([0, -100]), 300); // Optional vertical offset
         }, 200);
 
         const cleanWebsite = website && !/no web.?site/i.test(website) ? website.trim() : null;
@@ -212,14 +226,39 @@
         const dialog = document.getElementById('marker-dialog');
         if (dialog.open) dialog.close();
         document.getElementById('dialog-label').textContent = label;
+
+
         document.getElementById('dialog-content').innerHTML = `
-          <div><strong>Address:</strong> ${address || 'N/A'}</div>
-          ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
-          <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
-          <h3 style="margin-top: 10px;">
-            <a href="${url}" target="_blank" rel="noopener noreferrer">View Details at The Ultimate Hot Springs Guide Page</a>
-          </h3>
-        `;
+  <div><strong>Address:</strong> ${address || 'N/A'}</div>
+  ${websiteHtml ? `<div><strong>Website:</strong> ${websiteHtml}</div>` : ''}
+  <div><strong>Rating:</strong> ${rating || 'N/A'}</div>
+  <h3 style="margin-top: 10px;">
+    <a href="${url}" target="_blank" rel="noopener noreferrer">
+      View Details at The Ultimate Hot Springs Guide Page
+    </a>
+  </h3>
+  <div style="margin-top: 10px; display: flex; gap: 10px;">
+    <a href="${fUrl}" target="_blank" rel="noopener noreferrer" style="
+      background-color: #28a745;
+      color: white;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      display: inline-block;
+    ">Weather.gov</a>
+    <a href="${wUrl}" target="_blank" rel="noopener noreferrer" style="
+      background-color: #28a745;
+      color: white;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      display: inline-block;
+    ">Windy.com</a>
+  </div>
+`;
+
         dialog.showModal();
 
         // if (isMobile) {
